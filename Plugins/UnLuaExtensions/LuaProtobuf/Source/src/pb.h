@@ -14,7 +14,9 @@
 #endif /* PB_NS_BEGIN */
 
 #ifndef PB_STATIC
+THIRD_PARTY_INCLUDES_START 
 # if __GNUC__
+THIRD_PARTY_INCLUDES_END
 #   define PB_STATIC static __attribute((unused))
 # else
 #   define PB_STATIC static
