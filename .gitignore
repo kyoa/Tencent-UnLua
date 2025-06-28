@@ -13,9 +13,10 @@ WindowsNoEditor/
 MacNoEditor/
 Android_*/
 IOS/
-*.sln
+# *.sln
 *.VC.db
 *.xcworkspace
+.idea
 /.idea
 /TPSProject.sln.DotSettings.user
 /Plugins/Developer/RiderLink
