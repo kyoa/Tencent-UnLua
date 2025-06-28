@@ -7,30 +7,31 @@
 --
 
 ---@type ClassName
-local M = UnLua.Class()
+local XActor = UnLua.Class()
 
--- function M:Initialize(Initializer)
+
+-- function XActor:Initialize(Initializer)
 -- end
 
--- function M:UserConstructionScript()
+-- function XActor:UserConstructionScript()
 -- end
 
--- function M:ReceiveBeginPlay()
+-- function XActor:ReceiveBeginPlay()
 -- end
 
--- function M:ReceiveEndPlay()
+-- function XActor:ReceiveEndPlay()
 -- end
 
--- function M:ReceiveTick(DeltaSeconds)
+-- function XActor:ReceiveTick(DeltaSeconds)
 -- end
 
--- function M:ReceiveAnyDamage(Damage, DamageType, InstigatedBy, DamageCauser)
+-- function XActor:ReceiveAnyDamage(Damage, DamageType, InstigatedBy, DamageCauser)
 -- end
 
--- function M:ReceiveActorBeginOverlap(OtherActor)
+-- function XActor:ReceiveActorBeginOverlap(OtherActor)
 -- end
 
--- function M:ReceiveActorEndOverlap(OtherActor)
+-- function XActor:ReceiveActorEndOverlap(OtherActor)
 -- end
 
-return M
+return XActor
