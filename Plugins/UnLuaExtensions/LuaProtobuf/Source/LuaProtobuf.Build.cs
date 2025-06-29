@@ -27,7 +27,8 @@ public class LuaProtobuf : ModuleRules
 #endif
         bUseUnity = false;
         PCHUsage = PCHUsageMode.NoSharedPCHs;
-        bEnableUndefinedIdentifierWarnings = false;
+        // bEnableUndefinedIdentifierWarnings = false;
+        UndefinedIdentifierWarningLevel = WarningLevel.Off;
 
         PublicDependencyModuleNames.AddRange(
             new[]
@@ -52,7 +53,8 @@ public class LuaProtobuf : ModuleRules
                 "LUA_LIB"
             }
         );
-        
+
         PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "src"));
+        PrivatePCHHeaderFile = "Public/LuaProtobufModule.h";
     }
 }
