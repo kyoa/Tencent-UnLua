@@ -32,13 +32,13 @@ public class Lua : ModuleRules
     {
         Type = ModuleType.External;
 
-    #if UE_5_6_OR_LATER
+#if UE_5_6_OR_LATER
         CppCompileWarningSettings.UndefinedIdentifierWarningLevel = WarningLevel.Off;
         CppCompileWarningSettings.ShadowVariableWarningLevel = WarningLevel.Off;
-    #else
+#else
         UndefinedIdentifierWarningLevel = WarningLevel.Off;
         ShadowVariableWarningLevel = WarningLevel.Off;
-    #endif
+#endif
 
         m_LuaVersion = GetLuaVersion();
         m_Config = GetConfigName();
@@ -196,6 +196,22 @@ public class Lua : ModuleRules
     {
 #if UE_5_2_OR_LATER
         var abiName = Target.Architecture.ToString();
+        if (Target.Platform == UnrealTargetPlatform.Mac)
+        {
+            // 系统级架构检测
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = "/usr/bin/uname",
+                Arguments = "-m",
+                RedirectStandardOutput = true,
+                UseShellExecute = false
+            };
+            
+            var process = Process.Start(startInfo);
+            process.WaitForExit();
+            abiName = process.StandardOutput.ReadToEnd().Trim();
+        }
+        // var abiName = "x86_64";
 #else
         var abiName = Target.Architecture;
 #endif
